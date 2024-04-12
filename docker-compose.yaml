@@ -1,24 +1,37 @@
-version: '3.1'
+version: "3"
 services:
-    zoneminder:
-        container_name: zoneminder
-        image: dlandon/zoneminder.machine.learning:latest
-        restart: unless-stopped
-        ports:
-            - 8443:443/tcp
-            - 9000:9000/tcp
-        network_mode: "bridge"
+    zm:
+        image: oren47/zoneminder
+        container_name: Zoneminder
+        network_mode: bridge
         privileged: false
-        shm_size: "8gb"
+        shm_size: 16g
         environment:
-            - TZ=America/New_York
-            - PUID=99
-            - PGID=100
-            - MULTI_PORT_START=0
-            - MULTI_PORT_END=0
+           - PUID=99
+           - PGID=100
+           - MULTI_PORT_START=30000
+           - MULTI_PORT_END=30016
+           - TZ=America/New_York
+           - ADVANCED_SCRIPT=1
+           - INSTALL_HOOK=1
+        ports:
+           - "9000:9000/tcp"
+           - "9443:443/tcp"
+           - "8000:8000/tcp"
+           - "30000:30000"
+           - "30001:30001"
+           - "30002:30002"
+           - "30003:30003"
+           - "30004:30004"
+           - "30005:30005"
+           - "30006:30006"
+           - "30007:30007"
+           - "30008:30008"
+           - "30009:30009"
+           - "30010:30010"
+           - "30011:30011"
+           - "30012:30012"
         volumes:
-            - config:/config:rw
-            - data:/var/cache/zoneminder:rw
-volumes:
-    config:
-    data:
+           - "/room/Zmd:/var/cache/zoneminder"
+           - "/room/Zm:/config"
+        restart: unless-stopped

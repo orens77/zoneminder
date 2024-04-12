@@ -10,7 +10,7 @@ apt-get update 2>&1 | tee /tmp/test_update
 # Verify that the updates will work.
 if [ "`cat /tmp/test_update | grep 'Failed'`" = "" ]; then
 	# Perform Upgrade
-	apt-get -y upgrade -o Dpkg::Options::="--force-confold"
+	apt-get -y upgrade --with-new-pkgs -o Dpkg::Options::="--force-confold"
 
 	# Clean + purge old/obsoleted packages
 	apt-get -y autoremove
