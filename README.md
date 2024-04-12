@@ -10,7 +10,7 @@ The configuration settings that are needed for this implementation of Zoneminder
 
 This version will now upgrade Zoneminder from previous versions.
 
-You can donate [here](https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=EJGPC7B5CS66E).
+You can donate to dlandon [here](https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=EJGPC7B5CS66E).
 
 ### Support
 There is minimal support for this docker container at this time.
@@ -21,7 +21,7 @@ Go to the Zoneminder Forum [here](https://forums.zoneminder.com/) for support.
 Install the docker container by going to a command line and enter the command:
 
 ```bash
-docker pull dlandon/zoneminder.machine.learning
+docker pull oren47/zoneminder
 ```
 
 This will pull the zoneminder docker image. Once it is installed you are ready to run the docker container.
