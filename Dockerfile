@@ -30,7 +30,7 @@ RUN	add-apt-repository -y ppa:iconnor/zoneminder-$ZM_VERS && \
 	apt-get -y dist-upgrade -o Dpkg::Options::="--force-confold" && \
 	apt-get -y install apache2 mariadb-server && \
 	apt-get -y install ssmtp mailutils net-tools wget sudo make cmake gcc && \
-	apt-get -y install php$PHP_VERS php$PHP_VERS-fpm libapache2-mod-php$PHP_VERS php$PHP_VERS-mysql php$PHP_VERS-gd php$PHP_VERS-intl && \
+	apt-get -y install php$PHP_VERS php$PHP_VERS-fpm libapache2-mod-php$PHP_VERS php$PHP_VERS-mysql php$PHP_VERS-gd php$PHP_VERS-intl php$PHP_VERS-apcu && \
 	apt-get -y install libcrypt-mysql-perl libyaml-perl libjson-perl libavutil-dev ffmpeg && \
 	apt-get -y install --no-install-recommends libvlc-dev libvlccore-dev vlc-bin vlc-plugin-base vlc-plugin-video-output && \
 	apt-get -y install zoneminder
